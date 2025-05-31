@@ -9,7 +9,7 @@ export default function Landing() {
 
       </div>
       <div className="flex flex-col items-center space-y-6 z-10">
-        <img src="/dokumed-logo.svg" alt="Logo" className="h-10" />
+        <img src="/dokumed-logo.svg" alt="Logo" className="h-16" />
 
         <h1 className="text-center text-lg font-medium">
           Silakan masukkan kode unik pasien Anda!

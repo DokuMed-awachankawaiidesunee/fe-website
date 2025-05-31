@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 type NavbarProps = {
   doctorName: string
   department: string
@@ -5,13 +7,20 @@ type NavbarProps = {
 }
 
 export function Navbar({ doctorName, department, onLogout }: NavbarProps) {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    onLogout()
+    navigate('/login')
+  }
+
   return (
     <header className="w-full px-6 py-4 flex items-center justify-between border-b-2 border-neutral-300 bg-white">
       {/* Left: Logo */}
       <div className="flex items-center gap-2">
-        <img src="/dokumed-logo.svg" alt="DokuMed Logo" className="h-6" />
+        <img src="/dokumed-logo.svg" alt="DokuMed Logo" className="h-12" />
         <span className="text-lg font-semibold text-black">
-          Doku<span className="text-purple-primary">Med</span>
+          {/* Doku<span className="text-purple-primary">Med</span> */}
         </span>
       </div>
 
@@ -22,7 +31,7 @@ export function Navbar({ doctorName, department, onLogout }: NavbarProps) {
           <p className="text-xs text-purple-primary">{department}</p>
         </div>
         <button
-          onClick={onLogout}
+          onClick={handleLogout}
           className="text-purple-primary text-sm border border-purple-primary rounded-full px-4 py-1 hover:bg-purple-50 transition"
         >
           Keluar
