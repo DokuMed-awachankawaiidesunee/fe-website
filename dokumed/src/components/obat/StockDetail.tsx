@@ -194,7 +194,7 @@ export default function StockDetail() {
   }
 
   return (
-    <div className="space-y-6 bg-transparent">
+    <div className="p-6 rounded-2xl bg-gray-50">
       {/* Search Bar */}
       <div className="relative w-full max-w-md">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -228,9 +228,9 @@ export default function StockDetail() {
       </div>
 
       {/* Medicine Name */}
-      <h2 className="text-3xl font-semibold text-gray-900">{selectedMedicine.name}</h2>
+      <h2 className="text-3xl font-semibold text-gray-900 mt-6">{selectedMedicine.name}</h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
         {/* Left Column - Stock Info */}
         <div className="space-y-6">
           {/* Current Stock */}
