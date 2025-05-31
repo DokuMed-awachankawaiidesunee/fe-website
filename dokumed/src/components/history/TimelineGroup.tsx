@@ -16,7 +16,7 @@ export function TimelineGroup({ day, date, month, year, entries }: TimelineGroup
       <div className="w-20 flex flex-col items-center pt-1 relative z-10">
         <div className="text-center leading-tight">
           <p className="text-xl font-semibold text-purple-primary">{date}</p>
-          <p className="text-sm text-purple-primary">{month}, {year}</p>
+          <p className="text-sm text-purple-primary font-semibold">{month}, {year}</p>
         </div>
 
         <span className="text-xs mt-2 border border-purple-primary text-purple-primary px-2 py-0.5 rounded-full">

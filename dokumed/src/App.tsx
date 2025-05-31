@@ -5,8 +5,11 @@ import MainLayout from "./components/layout/MainLayout";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing";
 import History from "./pages/History";
-
-// import GlobalErrorListener from './components/ErrorToaster';
+import UserProvider from "./context/UserProvider";
+import Dashboard from "./pages/Dashboard";
+import DataDokter from "./pages/DataDokter";
+import Obat from "./pages/Obat";
+import { Navigate } from "react-router-dom";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -18,23 +21,43 @@ export default function App() {
       errorElement: <NotFound />,
       children: [
         {
-          path: "/landing",
+          path: "landing",
           element: <Landing />,
         },
         {
-          path: "/patient",
+          path: "history",
           element: <History />,
         },
       ],
     },
     {
       path: "/login",
-      element: <Login />
+      element: <Login />,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+      children: [
+        {
+          index: true, // ✅ This means path === /dashboard
+          element: <Navigate to="dokter" replace />,
+        },
+        {
+          path: "dokter",
+          element: <DataDokter />,
+        },
+        {
+          path: "obat",
+          element: <Obat />,
+        },
+      ],
     },
   ]);
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
     </QueryClientProvider>
   );
 }

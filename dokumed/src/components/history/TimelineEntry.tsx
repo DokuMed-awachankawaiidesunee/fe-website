@@ -17,7 +17,7 @@ export function TimelineEntry({
           <img src="/doctor_ic.svg" alt={doctorName} className="w-6 h-6" />
         </div>
         <div>
-          <div className="text-lg font-medium">{doctorName}</div>
+          <div className="text-lg font-semibold">{doctorName}</div>
           <div className="text-sm text-gray-500">{noteDate}</div>
         </div>
       </div>

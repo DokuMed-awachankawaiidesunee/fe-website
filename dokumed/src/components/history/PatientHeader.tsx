@@ -2,16 +2,18 @@ type PatientHeaderProps = {
   name: string;
   age: number;
   gender: string;
-  avatarUrl: string;
   symptoms: string;
+  medicine: string;
+  diagnosis: string;
 };
 
 export function PatientHeader({
   name,
   age,
   gender,
-  avatarUrl,
   symptoms,
+  medicine,
+  diagnosis
 }: PatientHeaderProps) {
   return (
     <div className="flex flex-col gap-6 mb-6">
@@ -26,16 +28,26 @@ export function PatientHeader({
         </div>
       </div>
       <div className="flex gap-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-start gap-2">
           <img
-            src={avatarUrl}
+            src="mascot-flipped.svg"
             alt="Avatar"
-            className="w-14 h-14 rounded-full"
+            className="w-12 h-12 rounded-full bg-neutral-200 p-1"
           />
         </div>
-        <div className="flex-1 mt-2 bg-neutral-300 rounded-xl p-4">
-          <p className="text-lg font-semibold">Gejala</p>
-          <p className="text-md text-gray-700">{symptoms}</p>
+        <div className="flex-1 mt-2 bg-neutral-300 rounded-xl space-y-5 p-4">
+          <div>
+            <p className="text-lg font-semibold">Gejala</p>
+            <p className="text-md text-gray-700">{symptoms}</p>
+          </div>
+          <div>
+            <p className="text-lg font-semibold">Rekomendasi Obat</p>
+            <p className="text-md text-gray-700">{medicine}</p>
+          </div>
+          <div>
+            <p className="text-lg font-semibold">Gejala</p>
+            <p className="text-md text-gray-700">{diagnosis}</p>
+          </div>
         </div>
       </div>
     </div>
