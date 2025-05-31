@@ -18,10 +18,6 @@ export default function App() {
       errorElement: <NotFound />,
       children: [
         {
-          path: "/",
-          element: <Login />,
-        },
-        {
           path: "/landing",
           element: <Landing />,
         },
@@ -30,6 +26,10 @@ export default function App() {
           element: <History />,
         },
       ],
+    },
+    {
+      path: "/login",
+      element: <Login />
     },
   ]);
   return (

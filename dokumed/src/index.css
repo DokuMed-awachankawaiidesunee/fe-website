@@ -1,18 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 
-:root {
-  /* Font families */
-  --font-family-bold: 'Figtree', sans-serif;
-  --font-family-semibold: 'Figtree', sans-serif;
-  --font-family-medium: 'Figtree', sans-serif;
-  --font-family-regular: 'Figtree', sans-serif;
-  --font-family-light: 'Figtree', sans-serif;
-  --font-family-black: 'Figtree', sans-serif;
-  
-  /* Colors palette */
+
+@theme{
   --color-dark-blue: #02273A;
-  --color-purple: #59539D;
+  --color-purple-primary: #59539D;
   --color-light-purple: #DEBEEF;
   --color-light-rose: #FBDFD3;
   --color-light-green: #C6DED0;
@@ -21,22 +13,8 @@
   --color-neutral-300: #F5F5F5;
   --color-neutral-500: #D9D9D9;
   --color-neutral-800: #8F8F8F;
-  
-  /* Theme colors */
-  --color-primary: var(--color-dark-blue);
-  --color-secondary: var(--color-purple);
-  --color-background: var(--color-cream);
-  --color-surface: var(--color-neutral-300);
-  --color-card: var(--color-neutral-200);
-  --color-text: var(--color-dark-blue);
-  --color-text-secondary: var(--color-neutral-800);
-  --color-border: var(--color-neutral-500);
-  --color-notification: var(--color-light-rose);
-  --color-success: var(--color-light-green);
-  --color-warning: var(--color-light-purple);
-  --color-error: var(--color-light-rose);
-  
-  /* Font sizes */
+
+
   --font-size-xxl: 2rem; /* 32px */
   --font-size-xl: 1.75rem; /* 28px */
   --font-size-lg: 1.5rem; /* 24px */
@@ -58,7 +36,18 @@
   --spacing-xxxl: 1.75rem; /* 28px */
 }
 
-/* Apply base styles */
+:root {
+  /* Font families */
+  --font-family-bold: 'Figtree', sans-serif;
+  --font-family-semibold: 'Figtree', sans-serif;
+  --font-family-medium: 'Figtree', sans-serif;
+  --font-family-regular: 'Figtree', sans-serif;
+  --font-family-light: 'Figtree', sans-serif;
+  --font-family-black: 'Figtree', sans-serif;
+ 
+}
+
+
 body {
   font-family: var(--font-family-regular);
   background-color: var(--color-background);
@@ -68,164 +57,3 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-bold);
-  color: var(--color-text);
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-xs);
-}
-
-h1 {
-  font-size: var(--font-size-xxl);
-}
-
-h2 {
-  font-size: var(--font-size-xl);
-}
-
-h3 {
-  font-size: var(--font-size-lg);
-}
-
-p {
-  font-size: var(--font-size-body);
-  margin-bottom: var(--spacing-md);
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-button, .button {
-  background-color: var(--color-primary);
-  color: var(--color-cream);
-  border: none;
-  border-radius: 8px;
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-family: var(--font-family-semibold);
-  font-size: var(--font-size-body);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-button:hover, .button:hover {
-  opacity: 0.9;
-}
-
-.button-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-border);
-}
-
-.card {
-  background-color: var(--color-card);
-  border-radius: 12px;
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-  border: 1px solid var(--color-border);
-}
-
-.badge {
-  background-color: var(--color-success);
-  color: var(--color-dark-blue);
-  padding: var(--spacing-xxs) var(--spacing-xs);
-  border-radius: 12px;
-  font-size: var(--font-size-xs);
-  font-family: var(--font-family-medium);
-  display: inline-block;
-}
-
-/* Font weight utility classes */
-.font-light {
-  font-family: var(--font-family-light);
-  font-weight: 300;
-}
-
-.font-regular {
-  font-family: var(--font-family-regular);
-  font-weight: 400;
-}
-
-.font-medium {
-  font-family: var(--font-family-medium);
-  font-weight: 500;
-}
-
-.font-semibold {
-  font-family: var(--font-family-semibold);
-  font-weight: 600;
-}
-
-.font-bold {
-  font-family: var(--font-family-bold);
-  font-weight: 700;
-}
-
-.font-black {
-  font-family: var(--font-family-black);
-  font-weight: 900;
-}
-
-/* Text color utilities */
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
-}
-
-.text-light {
-  color: var(--color-text-secondary);
-}
-
-/* Background color utilities */
-.bg-primary {
-  background-color: var(--color-primary);
-}
-
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-
-.bg-surface {
-  background-color: var(--color-surface);
-}
-
-.bg-card {
-  background-color: var(--color-card);
-}
-
-.bg-light-purple {
-  background-color: var(--color-light-purple);
-}
-
-.bg-light-rose {
-  background-color: var(--color-light-rose);
-}
-
-.bg-light-green {
-  background-color: var(--color-light-green);
-}
-
-/* You can uncomment this section if you need dark mode support */
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: var(--color-light-purple);
-    --color-secondary: var(--color-purple);
-    --color-background: var(--color-dark-blue);
-    --color-surface: var(--color-dark-blue);
-    --color-card: var(--color-purple);
-    --color-text: var(--color-cream);
-    --color-text-secondary: var(--color-neutral-500);
-    --color-border: var(--color-neutral-800);
-  }
-}
-*/
